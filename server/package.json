@@ -1,0 +1,32 @@
+{
+  "name": "barcodegen-server",
+  "version": "1.0.0",
+  "description": "Backend API for Online Barcode Generator (MERN)",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "barcode",
+    "generator",
+    "express",
+    "mongodb",
+    "mern"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "bwip-js": "^4.8.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.6",
+    "morgan": "^1.10.1",
+    "pdfkit": "^0.17.2",
+    "qrcode": "^1.5.4"
+  }
+}
