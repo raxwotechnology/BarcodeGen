@@ -38,7 +38,7 @@ app.get('/api/health', (req, res) => {
     2: 'connecting',
     3: 'disconnecting',
   };
-  res.json({
+  res.status(200).json({
     status: 'ok',
     mongodb: {
       state: dbState,

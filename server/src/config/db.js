@@ -46,6 +46,7 @@ const connectDB = async (mongoUri) => {
     console.error('   1. Start MongoDB locally, OR');
     // eslint-disable-next-line no-console
     console.error('   2. Set MONGODB_URI in .env file to MongoDB Atlas connection string');
+    process.exit(1); // Exit process with failure
   }
 };
 
