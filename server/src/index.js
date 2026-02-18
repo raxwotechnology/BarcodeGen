@@ -18,13 +18,24 @@ const app = express();
 app.use(express.json({ limit: '2mb' }));
 app.use(cookieParser());
 
-const clientOrigin = process.env.CLIENT_ORIGIN || true;
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://barcodesgenbyraxwo.netlify.app",
+];
+
 app.use(
   cors({
-    origin: clientOrigin,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
